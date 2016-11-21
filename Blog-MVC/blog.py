@@ -1,22 +1,4 @@
 #!/usr/bin/env python
-#
-# Copyright (c) 2008 - 2013 10gen, Inc. <http://10gen.com>
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-#
-
-
 
 import pymongo
 import blogPostDAO
@@ -25,10 +7,11 @@ import userDAO
 import bottle
 import cgi
 import re
+from bottle import url
+from bottle import static_file
 
 
-
-__author__ = 'aje'
+__author__ = 'Urvil'
 
 
 # General Discussion on structure. This program implements a blog. This file is the best place to start to get
@@ -39,8 +22,13 @@ __author__ = 'aje'
 
 # These are the routes that the blog must handle. They are decorated using bottle.py
 
-# This route is the main page of the blog
+
+
+@bottle.route('/index.html')
+def inddex():
+    return bottle.template('index.html')
 @bottle.route('/')
+
 def blog_index():
 
     cookie = bottle.request.get_cookie("session")
@@ -162,7 +150,9 @@ def post_newpost():
     # now bottle.redirect to the blog permalink
     bottle.redirect("/post/" + permalink)
 
-
+@bottle.route('/static/<filename>')
+def server_static(filename):
+    return static_file(filename, root='static/')
 # displays the initial blog signup form
 @bottle.get('/signup')
 def present_signup():
@@ -257,6 +247,7 @@ def process_signup():
 
 
 
+
 @bottle.get("/welcome")
 def present_welcome():
     # check for a cookie, if present, then extract value
@@ -328,5 +319,5 @@ sessions = sessionDAO.SessionDAO(database)
 
 
 bottle.debug(True)
-bottle.run(host='localhost', port=8082)         # Start the webserver running and wait for requests
+bottle.run(host='0.0.0.0', port=8082)         # Start the webserver running and wait for requests
 
