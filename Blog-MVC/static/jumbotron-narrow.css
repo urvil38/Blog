@@ -3,6 +3,15 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.signup a{
+  margin-right: 7px;
+}
+
+
+#form{
+  max-width: 720px;
+  margin-left: 250px;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -12,7 +21,10 @@ body {
   padding-left: 15px;
 }
 
-
+#nav_p{
+  margin-right: 15px;
+  font-size: 16px;
+}
 
 .button_signup {
   margin-left: 90%;
@@ -22,7 +34,7 @@ body {
 /* Custom page header */
 .header {
   padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #a8a49e;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -43,7 +55,7 @@ a:hover{
   display: block;
   padding-top: 18px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #a8a49e;
 }
 
 /* Customize container */
@@ -61,6 +73,26 @@ a:hover{
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
+
+.posts {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 15px;
+
+}
+
+.post_body{
+  text-align: left;
+  margin:0;
+  margin: 14px 0;
+  padding: 0 8px;
+  background-color: #e5e5e5;
+}
+.post_body p{
+  font-size: 15px;
+}
+
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;

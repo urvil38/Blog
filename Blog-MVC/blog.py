@@ -193,7 +193,7 @@ def process_login():
         # revert to .11 to solve the problem.
         bottle.response.set_cookie("session", cookie)
 
-        bottle.redirect("/welcome")
+        bottle.redirect("/blog_template")
 
     else:
         return bottle.template("login",
@@ -240,7 +240,7 @@ def process_signup():
         session_id = sessions.start_session(username)
         print session_id
         bottle.response.set_cookie("session", session_id)
-        bottle.redirect("/welcome")
+        bottle.redirect("/blog_template")
     else:
         print "user did not validate"
         return bottle.template("signup", errors)
@@ -248,7 +248,7 @@ def process_signup():
 
 
 
-@bottle.get("/welcome")
+@bottle.get("/blog_template")
 def present_welcome():
     # check for a cookie, if present, then extract value
 
@@ -258,7 +258,9 @@ def present_welcome():
         print "welcome: can't identify user...redirecting to signup"
         bottle.redirect("/signup")
 
-    return bottle.template("welcome", {'username': username})
+    l = posts.get_posts(10)
+
+    return bottle.template('blog_template', dict(myposts=l, username=username))
 
 
 

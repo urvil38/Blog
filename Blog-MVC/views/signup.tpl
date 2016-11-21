@@ -15,10 +15,12 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Login</a></li>
+            <li role="presentation" class="active signup"><a href="/login">Login</a></li>
+            <li role="presentation" class="active"><a href="/">Home</a></li>
+
           </ul>
         </nav>
-        <a href="/" id="logo" ><h3 class="text-muted">JumboTron</h3></a>
+        <a href="/" id="logo" ><h3 class="text-muted">Signup</h3></a>
       </div>
 
       <form class="form-horizontal" method="post">
@@ -46,6 +48,7 @@
             <input  class="form-control" type="text" name="email" value="{{email}}" placeholder="Email Address (optional) ">
           </div>
         </div>
+
         <button type="submit" class="btn btn-success button_signup">Submit</button> 
       </form>
 
