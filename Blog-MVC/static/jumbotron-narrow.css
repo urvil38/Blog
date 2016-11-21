@@ -12,6 +12,8 @@ body {
   padding-left: 15px;
 }
 
+
+
 .button_signup {
   margin-left: 90%;
   margin-bottom: 20px;
@@ -24,11 +26,12 @@ body {
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-  width: 50px;
+  width: 120px;
   display: inline-block;
-  margin-top: 0;
+  margin-top: 3px;
   margin-bottom: 0;
   line-height: 40px;
+  font-size:30px;
 }
 
 a:hover{

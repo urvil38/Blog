@@ -1,25 +1,4 @@
 #!/usr/bin/env python
-<<<<<<< HEAD
-#
-# Copyright (c) 2008 - 2013 10gen, Inc. <http://10gen.com>
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-#
-
-
-=======
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
 
 import pymongo
 import blogPostDAO
@@ -28,18 +7,11 @@ import userDAO
 import bottle
 import cgi
 import re
-<<<<<<< HEAD
-
-
-
-__author__ = 'aje'
-=======
 from bottle import url
 from bottle import static_file
 
 
 __author__ = 'Urvil'
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
 
 
 # General Discussion on structure. This program implements a blog. This file is the best place to start to get
@@ -50,22 +22,17 @@ __author__ = 'Urvil'
 
 # These are the routes that the blog must handle. They are decorated using bottle.py
 
-<<<<<<< HEAD
-# This route is the main page of the blog
+
+
 @bottle.route('/')
-=======
-
-
-@bottle.route('/index.html')
-def inddex():
+def index():
+    
     return bottle.template('index.html')
-@bottle.route('/')
 
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
+
+@bottle.route('/blog_template')
 def blog_index():
-
     cookie = bottle.request.get_cookie("session")
-
     username = sessions.get_username(cookie)
 
     # even if there is no logged in user, we can show the blog
@@ -183,13 +150,9 @@ def post_newpost():
     # now bottle.redirect to the blog permalink
     bottle.redirect("/post/" + permalink)
 
-<<<<<<< HEAD
-
-=======
 @bottle.route('/static/<filename>')
 def server_static(filename):
     return static_file(filename, root='static/')
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
 # displays the initial blog signup form
 @bottle.get('/signup')
 def present_signup():
@@ -254,7 +217,7 @@ def process_logout():
     bottle.response.set_cookie("session", "")
 
 
-    bottle.redirect("/signup")
+    bottle.redirect("/")
 
 
 @bottle.post('/signup')
@@ -284,10 +247,7 @@ def process_signup():
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
 @bottle.get("/welcome")
 def present_welcome():
     # check for a cookie, if present, then extract value
@@ -302,7 +262,8 @@ def present_welcome():
 
 
 
-# Helper Functions
+# Helper Functionsconnections on port 27017
+#2016-11-21T10:45:36.821+0530 I NETWORK  [initandlisten] connection accepted
 
 #extracts the tag from the tags form element. an experience python programmer could do this in  fewer lines, no doubt
 def extract_tags(tags):
@@ -359,9 +320,5 @@ sessions = sessionDAO.SessionDAO(database)
 
 
 bottle.debug(True)
-<<<<<<< HEAD
 bottle.run(host='localhost', port=8082)         # Start the webserver running and wait for requests
-=======
-bottle.run(host='0.0.0.0', port=8082)         # Start the webserver running and wait for requests
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
 

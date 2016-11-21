@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-__author__ = 'aje'
-=======
 __author__ = 'Urvil'
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
 
 
 #
@@ -53,19 +49,11 @@ class BlogPostDAO:
                 "permalink":permalink,
                 "tags": tags_array,
                 "comments": [],
-<<<<<<< HEAD
-                "date": datetime.datetime.utcnow()}
-
-        # now insert the post
-        try:
-            # XXX HW 3.2 Work Here to insert the post
-=======
                 "date": datetime.datetime.now()}
 
         # now insert the post
         try:
             self.posts.insert_one(post)
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
             print "Inserting the post"
         except:
             print "Error inserting post"
@@ -78,11 +66,7 @@ class BlogPostDAO:
 
         cursor = iter(())  # Using an empty itable for a placeholder so blog compiles before you make your changes
 
-<<<<<<< HEAD
-        # XXX HW 3.2 Work here to get the posts
-=======
         cursor = self.posts.find().sort('date' , direction = -1).limit(num_posts)
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
 
         l = []
 
@@ -105,12 +89,7 @@ class BlogPostDAO:
     def get_post_by_permalink(self, permalink):
 
         post = None
-<<<<<<< HEAD
-        # XXX 3.2 Work here to retrieve the specified post
-
-=======
         post = self.posts.find_one({'permalink' : permalink})
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
         if post is not None:
             # fix up date
             post['date'] = post['date'].strftime("%A, %B %d %Y at %I:%M%p")
@@ -126,15 +105,9 @@ class BlogPostDAO:
             comment['email'] = email
 
         try:
-<<<<<<< HEAD
-            # XXX HW 3.3 Work here to add the comment to the designated post. When done, modify the line below to return the number of documents updated by your modification, rather than just -1.
-
-            return -1  # Change this to return the number of documents updated by the code for HW 3.3
-=======
             last_error = self.posts.update({'permalink' : permalink} , {'$push' : {'comments' : comment}} , upsert = False , manipulate = False)
 
             return last_error['n']  # Change this to return the number of documents updated by the code for HW 3.3
->>>>>>> 77818d325ca1ce7150021adb8aa691fe6660387c
 
         except:
             print "Could not update the collection, error"

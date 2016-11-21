@@ -14,7 +14,7 @@
     Welcome {{username}}
 <p>
 <ul>
-<li><a href="/">Goto Blog Home</a></li>
+<li><a href="/blog_template">Goto Blog Home</a></li>
 <li>
 <a href="/logout">Logout</a>
 </li>
