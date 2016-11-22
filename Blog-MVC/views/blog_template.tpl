@@ -16,7 +16,7 @@
 	      <nav class="navbar navbar-default">
 			  <div class="container-fluid">
 			    <div class="navbar-header">			      
-			     <a class="navbar-brand" href="index_logout.html">JumboTron</a>
+			     <a class="navbar-brand">JumboTron</a>
 			    </div>
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,13 +37,15 @@
 		<div class="jumbotron posts">
 			<h2><a href="/post/{{post['permalink']}}">{{post['title']}}</a></h2>
 			Posted {{post['post_date']}} By<b> {{post['author']}}</b><br>
+			<a href="/post/{{post['permalink']}}">
 			Comments: 
 			%if ('comments' in post):
 			%numComments = len(post['comments'])
 			%else:
 			%numComments = 0
 			%end
-			<a href="/post/{{post['permalink']}}">{{numComments}}</a>
+			</a>
+			{{numComments}}
 			<div class="post_body">
 				<p>
 				{{!post['body']}}

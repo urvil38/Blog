@@ -13,6 +13,14 @@ body {
   margin-left: 250px;
 }
 
+
+#form_entry{
+  max-width: 720px;
+  margin-left: 20px;
+}
+
+
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -75,10 +83,13 @@ a:hover{
 }
 
 .posts {
-  max-width: 500px;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
-  padding: 15px 15px;
+  padding-top:15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
 
 }
 
@@ -88,7 +99,14 @@ a:hover{
   margin: 14px 0;
   padding: 0 8px;
   background-color: #e5e5e5;
+
 }
+
+.comment{
+  margin-left: 50px; 
+}
+
+
 .post_body p{
   font-size: 15px;
 }
