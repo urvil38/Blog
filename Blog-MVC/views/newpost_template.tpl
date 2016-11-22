@@ -16,7 +16,7 @@
 	      <nav class="navbar navbar-default">
 			  <div class="container-fluid">
 			    <div class="navbar-header">			      
-			     <a class="navbar-brand" >JumboTron</a>
+			     <a class="navbar-brand" >JumboBlog</a>
 			    </div>
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->

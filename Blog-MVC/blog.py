@@ -148,7 +148,7 @@ def post_newpost():
     permalink = posts.insert_entry(title, formatted_post, tags_array, username)
 
     # now bottle.redirect to the blog permalink
-    bottle.redirect("/post/" + permalink)
+    bottle.redirect("/blog_template")
 
 @bottle.route('/static/<filename>')
 def server_static(filename):
