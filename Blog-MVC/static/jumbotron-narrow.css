@@ -3,6 +3,18 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+img{
+  max-width: 100%;
+}
+
+.github{
+  width: 75px;
+  height: 75px;
+  margin-bottom: 18px;
+  margin-top: -10px;
+}
+
 .signup a{
   margin-right: 7px;
 }
@@ -64,6 +76,7 @@ a:hover{
   padding-top: 18px;
   color: #777;
   border-top: 1px solid #a8a49e;
+  text-align: center;
 }
 
 /* Customize container */
@@ -80,6 +93,13 @@ a:hover{
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+}
+
+.social-icon{
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  margin-bottom: 4px;
 }
 
 .posts {

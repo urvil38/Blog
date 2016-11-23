@@ -18,8 +18,8 @@
             <li role="presentation" class="signup active"><a href="/signup">Signup</a></li> 
             <li role="presentation" class="active"><a href="/">Home</a></li>
           </ul>
-        </nav>
-        <a href="/" id="logo" ><h3 class="text-muted">Login</h3></a>
+        </nav> 
+        <h3 class="text-muted">Login</h3>
       </div>
 
       <form class="form-horizontal" method="post">
@@ -40,7 +40,9 @@
       </form>
 
       <footer class="footer">
-        <p>&copy; 2016 Urvil Patel</p>
+      <a href="http://www.facebook.com/urvil.patel.104"><img src="static/facebook-wrap.png" alt="Facebooklogo" class="social-icon"/></a>
+          <a href="http://www.twitter.com/UrvilPatel12"><img src="static/twitter-wrap.png" alt="Twitterlogo" class="social-icon"/></a>
+        <p>&copy; 2016 Urvil Patel.</p>
       </footer>
 
     </div> 
