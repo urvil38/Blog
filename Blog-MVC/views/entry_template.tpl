@@ -26,7 +26,7 @@
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
 			      	<li><a href="/logout">Logout</a></li>
-			        <p class="navbar-text navbar-right" id="nav_p"><b>Hello {{username}}</b></a></p>
+			        <p class="navbar-text navbar-right" id="nav_p"><b>Hi {{username}}</b></a></p>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -82,15 +82,13 @@
       <form class="form-horizontal" action="/newcomment" method="post">
       	<input type="hidden" name="permalink", value="{{post['permalink']}}">
         <div class="form-group">
-          <label  class="col-sm-2 control-label">Name :</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" name="commentName" value="{{comment['name']}}" placeholder="required">
+            <input class="form-control" type="hidden" name="commentName" value="{{username}}" placeholder="required">
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Email :</label>
           <div class="col-sm-10">
-            <input  class="form-control" type="text" name="commentEmail" value="{{comment['email']}}" placeholder="Email(optional)">
+            <input  class="form-control" type="hidden" name="commentEmail" type="hidden" value="{{comment['email']}}" placeholder="Email(optional)">
           </div>
         </div>
         <div class="form-group">

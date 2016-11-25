@@ -7,6 +7,7 @@
 
  <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
  <link rel="stylesheet" type="text/css" href="/static/jumbotron-narrow.css">
+ 
   </head>
 
   <body>
@@ -26,7 +27,7 @@
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
 			      	<li><a href="/logout">Logout</a></li>
-			        <p class="navbar-text navbar-right" id="nav_p"><b>Hello {{username}}</b></a></p>
+			        <p class="navbar-text navbar-right" id="nav_p"><b>Hi {{username}}</b></a></p>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->

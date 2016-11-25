@@ -7,6 +7,8 @@
 
  <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
  <link rel="stylesheet" type="text/css" href="/static/jumbotron-narrow.css">
+ <script type="text/javascript" src="/static/jquery.min.js"></script>
+ <script type="text/javascript" src="/static/validator.min.js"></script>
   </head>
 
   <body>
@@ -23,29 +25,35 @@
         <h3 class="text-muted">Signup</h3>
       </div>
 
-      <form class="form-horizontal" method="post">
+      <form method="post" class="form-horizontal" data-toggle="validator" >
         <div class="form-group">
-          <label  class="col-sm-2 control-label">Username</label>
+          <label  class="col-sm-2 control-label" for="username">Username :</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" name="username" value="{{username}}" placeholder="Username">
+            <input class="form-control" data-error="username is invalid" type="text" id="username" name="username" value="{{username}}" placeholder="Username" pattern="^[_A-z0-9]{1,}$" maxlength="15" required>
+            <div class="help-block with-errors" style="margin-bottom: 0;
+                                                       margin-left: 2px;
+                                                       color: #a94442">{{username_error}}</div>
+          </div> 
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Password :</label>
+          <div class="col-sm-10">
+            <input  data-minlength="6" class="form-control" type="password" id="password" name="password" value="" placeholder="Password" required>
+            <div class="help-block" style="margin-bottom: 0;">Minimum of 6 characters</div>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Password</label>
+          <label class="col-sm-2 control-label">Password :</label>
           <div class="col-sm-10">
-            <input  class="form-control" type="password" name="password" value="" placeholder="Password">
+            <input  class="form-control" type="password" id="passwordAgain" name="verify" value="" placeholder="confirm password" data-match="#password" data-match-error="password don't match" required>
+            <div class="help-block with-errors" style="margin-bottom: 0;"></div>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Password</label>
+          <label  class="col-sm-2 control-label">Email :</label>
           <div class="col-sm-10">
-            <input  class="form-control" type="password" name="verify" value="" placeholder="Password Again">
-          </div>
-        </div>
-        <div class="form-group">
-          <label  class="col-sm-2 control-label">Email</label>
-          <div class="col-sm-10">
-            <input  class="form-control" type="text" name="email" value="{{email}}" placeholder="Email Address (optional) ">
+            <input  class="form-control" data-error="email address is invalid" type="email" name="email" id="email" value="{{email}}" placeholder="email@example.com" required>
+            <div class="help-block with-errors" style="margin-bottom: 0;"></div>
           </div>
         </div>
 

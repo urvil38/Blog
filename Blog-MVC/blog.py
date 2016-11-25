@@ -153,6 +153,10 @@ def post_newpost():
 @bottle.route('/static/<filename>')
 def server_static(filename):
     return static_file(filename, root='static/')
+
+@bottle.route('/post/static/<filename>')
+def server_static(filename):
+    return static_file(filename, root='static/')    
 # displays the initial blog signup form
 @bottle.get('/signup')
 def present_signup():
@@ -198,7 +202,7 @@ def process_login():
     else:
         return bottle.template("login",
                                dict(username=cgi.escape(username), password="",
-                                    login_error="Invalid Login"))
+                                    login_error="username or password is incorrect"))
 
 
 @bottle.get('/internal_error')
@@ -234,7 +238,7 @@ def process_signup():
 
         if not users.add_user(username, password, email):
             # this was a duplicate
-            errors['username_error'] = "Username already in use. Please choose another"
+            errors['username_error'] = "username already taken. please choose another"
             return bottle.template("signup", errors)
 
         session_id = sessions.start_session(username)

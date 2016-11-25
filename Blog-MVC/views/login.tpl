@@ -7,6 +7,8 @@
 
  <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
  <link rel="stylesheet" type="text/css" href="/static/jumbotron-narrow.css">
+  <script type="text/javascript" src="/static/jquery.min.js"></script>
+ <script type="text/javascript" src="/static/validator.min.js"></script>
   </head>
 
   <body>
@@ -22,17 +24,19 @@
         <h3 class="text-muted">Login</h3>
       </div>
 
-      <form class="form-horizontal" method="post">
+      <form class="form-horizontal" method="post" data-toggle="validator">
         <div class="form-group">
-          <label  class="col-sm-2 control-label">Username</label>
+          <label class="col-sm-2 control-label">Username :</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" name="username" value="{{username}}" placeholder="Username">
+              <input class="form-control" data-error="username is invalid" type="text" id="username" name="username" value="{{username}}" placeholder="Username" pattern="^[_A-z0-9]{1,}$" maxlength="15" required>
+              <div class="help-block with-errors" style="margin-left: 2px;"></div>
           </div>
-        </div>
+        </div>  
         <div class="form-group">
-          <label class="col-sm-2 control-label">Password</label>
+          <label class="col-sm-2 control-label">Password :</label>
           <div class="col-sm-10">
-            <input  class="form-control" type="password" name="password" value="" placeholder="Password">
+            <input  class="form-control" type="password" id="password" name="password" value="" placeholder="Password" required>
+            <div class="help-block with-errors" style="margin-left: 5px; color: #a94442;">{{login_error}}</div>
           </div>
         </div>
         
