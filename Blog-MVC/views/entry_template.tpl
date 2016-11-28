@@ -7,9 +7,15 @@
 
  <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
  <link rel="stylesheet" type="text/css" href="/static/jumbotron-narrow.css">
+  <script type="text/javascript" src="/static/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/validator.min.js"></script>
   </head>
 
-  <body>
+  <body style="  background-image: url('static/images.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;">
 
     <div class="container-fluid">
       	<div class="header clearfix">
@@ -78,8 +84,8 @@
 			</div>	
 		%end
 
-	<div id="form_entry">
-      <form class="form-horizontal" action="/newcomment" method="post">
+	<div id="form_entry" data-toggle="validator">
+      <form class="form-horizontal" action="/newcomment" method="post" id="myForm" data-toggle="validator">
       	<input type="hidden" name="permalink", value="{{post['permalink']}}">
         <div class="form-group">
           <div class="col-sm-10">
@@ -94,11 +100,12 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">Comment :</label>
           <div class="col-sm-10">
-            <textarea class="form-control" name="commentBody"  rows="10">{{comment['body']}}</textarea>
+            <textarea class="form-control" name="commentBody" id="commentBody" rows="10" required>{{comment['body']}}</textarea>
+            <div class="help-block with-errors"></div>
           </div>
-        </div>
+		</div>
         
-        <button type="submit" value="Submit" class="btn btn-success button_signup ">Submit</button> 
+        <button type="submit" value="Submit" id="submit" class="btn btn-success button_signup ">Submit</button> 
       </form>
     </div> 
 

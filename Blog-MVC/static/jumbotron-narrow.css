@@ -4,8 +4,19 @@ body {
   padding-bottom: 20px;
 }
 
+
 img{
   max-width: 100%;
+}
+
+label{
+  color: white;
+}
+
+label#commentBody-error{
+  color: red;
+  margin-left: 2px;
+  font-size: 15px;
 }
 
 .github{
@@ -69,6 +80,7 @@ img{
   margin-bottom: 0;
   line-height: 40px;
   font-size:30px;
+  color: white;
 }
 
 a:hover{
@@ -82,8 +94,9 @@ a:hover{
   color: #777;
   border-top: 1px solid #a8a49e;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 25px;
 }
+
 
 /* Customize container */
 @media (min-width: 768px) {
@@ -107,6 +120,8 @@ a:hover{
   margin: 0 5px;
   margin-bottom: 8px;
   margin-top: 10px;
+  background-color: white;
+  border-radius: 100%;
 }
 
 .posts {
@@ -120,12 +135,14 @@ a:hover{
 
 }
 
+
+
 .post_body{
   text-align: left;
   margin:0;
   margin: 14px 0;
   padding: 0 8px;
-  background-color: #e5e5e5;
+  background-color: #d8d8d8;
 
 }
 

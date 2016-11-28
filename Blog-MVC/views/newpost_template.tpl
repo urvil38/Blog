@@ -7,9 +7,15 @@
 
  <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
  <link rel="stylesheet" type="text/css" href="/static/jumbotron-narrow.css">
+  <script type="text/javascript" src="/static/jquery.min.js"></script>
+ <script type="text/javascript" src="/static/validator.min.js"></script>
   </head>
 
-  <body>
+  <body style="  background-image: url('static/images.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;">
 
     <div class="container-fluid">
       	<div class="header clearfix">
@@ -34,23 +40,26 @@
 		</div>
 
 	<div id="form">
-      <form class="form-horizontal" action="/newpost"method="post">
+      <form class="form-horizontal" action="/newpost"method="post" data-toggle="validator">
         <div class="form-group">
           <label  class="col-sm-2 control-label">Title :</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" name="subject" value="{{subject}}" placeholder="subject">
+            <input class="form-control" type="text" name="subject" value="{{subject}}" placeholder="subject" required>
+            <div class="help-block with-errors"></div>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">Body :</label>
           <div class="col-sm-10">
-            <textarea class="form-control" name="body"  rows="20">{{body}}</textarea>
+            <textarea class="form-control" name="body"  rows="20" required>{{body}}</textarea>
+            <div class="help-block with-errors"></div>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-2 control-label">Tags :</label>
           <div class="col-sm-10">
-            <input  class="form-control" type="text" name="tags" value="{{tags}}" placeholder="tags">
+            <input  class="form-control" type="text" name="tags" value="{{tags}}" placeholder="tags" required>
+            <div class="help-block with-errors"></div>
           </div>
         </div>
         

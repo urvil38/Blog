@@ -11,7 +11,11 @@
  <script type="text/javascript" src="/static/validator.min.js"></script>
   </head>
 
-  <body>
+  <body style="  background-image: url('static/images.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;">
 
     <div class="container">
       <div class="header clearfix">
@@ -21,7 +25,7 @@
             <li role="presentation" class="active"><a href="/">Home</a></li>
           </ul>
         </nav> 
-        <h3 class="text-muted">Login</h3>
+        <h3>Login</h3>
       </div>
 
       <form class="form-horizontal" method="post" data-toggle="validator">

@@ -107,8 +107,7 @@ class BlogPostDAO:
         try:
             last_error = self.posts.update({'permalink' : permalink} , {'$push' : {'comments' : comment}} , upsert = False , manipulate = False)
 
-            return last_error['n']  # Change this to return the number of documents updated by the code for HW 3.3
-
+            return last_error['n']  
         except:
             print "Could not update the collection, error"
             print "Unexpected error:", sys.exc_info()[0]

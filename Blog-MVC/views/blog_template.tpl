@@ -10,7 +10,11 @@
  
   </head>
 
-  <body>
+  <body style="  background-image: url('static/images.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;">
 
     <div class="container-fluid">
       <div class="header clearfix">

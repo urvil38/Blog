@@ -11,7 +11,11 @@
  <script type="text/javascript" src="/static/validator.min.js"></script>
   </head>
 
-  <body>
+  <body style="  background-image: url('static/images.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;">
 
     <div class="container">
       <div class="header clearfix">
@@ -32,7 +36,7 @@
             <input class="form-control" data-error="username is invalid" type="text" id="username" name="username" value="{{username}}" placeholder="Username" pattern="^[_A-z0-9]{1,}$" maxlength="15" required>
             <div class="help-block with-errors" style="margin-bottom: 0;
                                                        margin-left: 2px;
-                                                       color: #a94442">{{username_error}}</div>
+                                                       color: rgb(255, 36, 32);">{{username_error}}</div>
           </div> 
         </div>
         <div class="form-group">
@@ -60,7 +64,7 @@
         <button type="submit" class="btn btn-success button_signup">Submit</button> 
       </form>
 
-      <footer class="footer">
+      <footer class="footer" style="margin-top: 50px;">
       <a href="http://www.facebook.com/urvil.patel.104"><img src="static/facebook-wrap.png" alt="Facebooklogo" class="social-icon"/></a>
           <a href="http://www.twitter.com/UrvilPatel12"><img src="static/twitter-wrap.png" alt="Twitterlogo" class="social-icon"/></a>
         <p>&copy; 2016 Urvil Patel.</p>

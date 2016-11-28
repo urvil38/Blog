@@ -180,7 +180,6 @@ def process_login():
     username = bottle.request.forms.get("username")
     password = bottle.request.forms.get("password")
 
-    print "user submitted ", username, "pass ", password
 
     user_record = users.validate_login(username, password)
     if user_record:
@@ -325,6 +324,6 @@ users = userDAO.UserDAO(database)
 sessions = sessionDAO.SessionDAO(database)
 
 
-bottle.debug(True)
+
 bottle.run(host='localhost', port=8082)         # Start the webserver running and wait for requests
 
