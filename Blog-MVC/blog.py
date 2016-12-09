@@ -26,7 +26,7 @@ __author__ = 'Urvil'
 
 @bottle.route('/')
 def index():
-    
+
     return bottle.template('index.html')
 
 
@@ -156,7 +156,7 @@ def server_static(filename):
 
 @bottle.route('/post/static/<filename>')
 def server_static(filename):
-    return static_file(filename, root='static/')    
+    return static_file(filename, root='static/')
 # displays the initial blog signup form
 @bottle.get('/signup')
 def present_signup():
@@ -325,5 +325,4 @@ sessions = sessionDAO.SessionDAO(database)
 
 
 
-bottle.run(host='localhost', port=8082)         # Start the webserver running and wait for requests
-
+bottle.run(host='localhost', port=8082)    
