@@ -324,5 +324,4 @@ users = userDAO.UserDAO(database)
 sessions = sessionDAO.SessionDAO(database)
 
 
-
-bottle.run(host='localhost', port=8082)    
+bottle.run(host='localhost', port=8082)
